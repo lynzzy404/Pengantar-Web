@@ -1,8 +1,6 @@
 # Pengantar Pemrograman Web
 
 > **Mata Kuliah:** Praktikum Pemrograman Web
-> **Semester:** 3
-> **Politeknik Negeri Banjarmasin**
 
 ## Daftar Pertemuan
 
