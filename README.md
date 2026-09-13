@@ -51,7 +51,3 @@ Pengantar-Web/
 3. Tambahkan link di `index.html`
 4. Update tabel di atas
 5. Commit & push
-
----
-
-*Dibuat untuk tugas praktikum pemrograman web*
