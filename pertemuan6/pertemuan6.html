@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: blue;
+            /* font-size: 50px; */
+        }
+        input {
+            background-color: green;
+        }
+        .input-class {
+            background-color: blue;
+        }
+        #input-id {
+            background-color: yellow;
+        }
+        div p {
+            color: red;
+        }
+        ul>li {
+            color: blue;
+        }
+        h1+p {
+            color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../index.html">Kembali</a>
+
+    <!-- Inline CSS -->
+    <h1 style="color: red">POLITEKNIK NEGERI BANJARMASIN</h1>
+
+    <!-- Internal CSS -->
+    <h2>JURUSAN AKUNTANSI</h2>
+
+    <!-- External CSS -->
+    <h3>D3 Sistem Informasi Akuntansi</h3>
+
+    <!-- CSS Type -->
+    <p>CSS Type bisa disebut dengan <b>Type Selector (.)</b></p>
+    <input style="background-color: blueviolet;" type="text">
+    <br>
+
+    <!-- CSS Class, bisa digunakan berulang kali (Class Selector (.)) -->
+    <p>CSS Class, bisa digunakan berulang kali bisa disebut dengan <b>Class Selector (.)</b></p>
+    <input class="input-class" type="text">
+    <br>
+
+    <!-- CSS id, digunakan hanya untuk 1 element -->
+    <p>CSS id, digunakan hanya untuk 1 element bisa disebut dengan <b>ID Selector (#)</b></p>
+    <input id="input-id" type="text">
+
+    <!-- Grouping Selector (h1, h2, h3)-->
+    <!-- Universal Selector (*) -->
+
+    <br><br>
+
+    Paragraf 1
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsam velit veritatis distinctio, commodi tempora. Dicta doloremque, nihil provident velit quaerat beatae quis! Aspernatur consequuntur dolorum neque placeat possimus officiis!
+    </p>
+
+    <!-- Combinator Selector -->
+    <!-- Descendant (Spasi) -->
+    <div>
+        Paragraf 2
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est dolorum nihil cum maxime nesciunt laboriosam officiis quo fugiat ratione impedit? Laborum sapiente consectetur vitae, nihil distinctio facilis facere. Provident, qui.
+        </p> 
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum, ducimus atque aliquam expedita voluptates non velit accusantium soluta eveniet distinctio quo esse, corporis explicabo dolores officia quam culpa dolore!
+        </p>
+
+        <!-- Child (>) -->
+        <ul>
+            <li style="color: red;">Anak 1</li>
+            <li>Anak 2</li>
+            <li>Anak 3</li>
+            <li>
+                <ul>
+                    <li>Cucu 1</li>
+                    <li>Cucu 2</li>
+                    <li>Cucu 3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Adjacent Sibling (+) -->
+    <div>
+        <h1>Elemen 1</h1>
+        <p>Paragraf 1</p>
+        <p>Paragraf 2</p>
+    </div>
+
+    <!-- General Sibling -->
+    <div>
+        <h1>Elemen 2</h1>
+        <p>Paragraf 1</p>
+        <span style="color: blue;">Teks Biasa</span>
+        <p>Paragraf 2</p>
+    </div>
+</body>
+</html>

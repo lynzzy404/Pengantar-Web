@@ -9,19 +9,19 @@
 | 1 | Pengenalan HTML | Struktur dasar HTML, elemen, atribut |
 | 2 | HTML Lanjutan | List, nested list, gambar |
 | 3 | Tabel & Form | Tabel, form, input, validasi |
-| 4 | CSS Dasar | Selector, properti, box model |
-| 5 | CSS Layout | Flexbox, grid, responsive |
-| 6 | JavaScript Dasar | Variabel, tipe data, operador |
-| 7 | JavaScript DOM | Manipulasi DOM, event handling |
-| 8 | Form Validation | Validasi form dengan JS |
-| 9 | Responsive Web | Media query, mobile-first |
-| 10 | Project Working | Pengembangan proyek |
-| 11 | Project Working | Pengembangan proyek |
-| 12 | Project Working | Pengembangan proyek |
-| 13 | Project Working | Pengembangan proyek |
-| 14 | Project Working | Pengembangan proyek |
-| 15 | Presentasi | Presentasi proyek |
-| 16 | Review | Review dan evaluasi akhir |
+| 4 | - | - |
+| 5 | - | - |
+| 6 | CSS Dasar | Sintaks dasar, selector, box model, flexbox, CSS grid, responsif |
+| 7 | - | - |
+| 8 | - | - |
+| 9 | - | - |
+| 10 | - | - |
+| 11 | - | - |
+| 12 | - | - |
+| 13 | - | - |
+| 14 | - | - |
+| 15 | - | - |
+| 16 | - | - |
 
 ## Live Demo
 
@@ -41,6 +41,16 @@ Pengantar-Web/
 ├── pertemuan3/
 │   ├── pertemuan3.html
 │   └── logo1.png
+├── pertemuan6/
+│   ├── pertemuan6.html
+│   ├── style.css
+│   └── TUGAS/
+│       ├── 01_Latihan_Dasar/
+│       │   ├── sebelum/   (6 topik: sintaks dasar, selector, box model, flexbox, grid, responsif)
+│       │   └── sesudah/   (6 topik)
+│       └── 02_Latihan_Dasar/
+│           ├── sebelum/   (4 kasus: profil, navbar, galeri, landing)
+│           └── sesudah/   (4 kasus)
 └── ...
 ```
 

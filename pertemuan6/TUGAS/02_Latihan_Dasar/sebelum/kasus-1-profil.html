@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus 1: Profil Card Sederhana</title>
+    <style>
+        /* TUGAS:
+           1. Berikan kontener lebar 300px, padding 24px, border-radius 12px, dan box-shadow.
+           2. Buat avatar menjadi bulat dengan border-radius 50%.
+           3. Ganti warna background tombol, hapus border, dan tambahkan efek hover (transform/cursor).
+        */
+        
+        .kontener {
+            width: 300px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0, 0.1);
+            text-align: center;
+            background-color: white;
+
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        button {
+            background-color: blue;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: blue;
+            cursor: pointer;
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 50px;">
+    <a href="../../../../../index.html">Kembali</a>
+    <div class="kontener" >
+        <img src="./profile.png" alt="Avatar" class="avatar">
+        <h2>M. Nur Said</h2>
+        <p>Frontend Developer | Tech Educator</p>
+        <p>Passionate about clean code and modern UI/UX.</p>
+        <button>Follow Said</button>
+    </div>
+</body>
+</html>
