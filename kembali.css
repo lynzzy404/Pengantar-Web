@@ -1,0 +1,27 @@
+/* Chip "Kembali" — RawBlock, sama dengan .chip di index.html */
+/* Akses: pertemuanN -> ../kembali.css | pertemuan6/TUGAS/... -> ../../../kembali.css */
+.kembali {
+    align-self: flex-start; /* Jangan stretch (flex column) */
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0;
+    color: black;
+    padding: 4px 12px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.15s ease;
+    text-decoration: none;
+}
+.kembali.klik {
+    border-color: #008000;
+    color: #008000;
+}
+.kembali.klik:hover {
+    background: #008000;
+    color: white;
+    border-color: #008000;
+    text-decoration: none;
+}
