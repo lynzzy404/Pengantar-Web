@@ -32,6 +32,9 @@
 ```
 Pengantar-Web/
 ├── index.html
+├── style.css      (CSS halaman utama: grid, kartu, toolbar, akordeon)
+├── script.js      (Quick Jump + Live Search)
+├── template.md    (template kartu pertemuan baru)
 ├── pertemuan1/
 │   ├── pertemuan1.html
 │   └── tes.jpeg
@@ -58,6 +61,8 @@ Pengantar-Web/
 
 1. Buat folder `pertemuanX/`
 2. Buat file `pertemuanX.html` di dalamnya
-3. Tambahkan link di `index.html`
-4. Update tabel di atas
-5. Commit & push
+3. Salin **template kartu** dari `template.md` (varian A sederhana, B segera hadir, atau C accordion), tempel ke dalam `<div class="grid-pertemuan">`, lalu isi `id`, `data-title`, teks, dan `href`-nya
+4. Tambahkan tombol Quick Jump di `<nav class="tombol-jump">`:
+   `<button type="button" class="tombol-angka" data-target="pertemuan-X">X</button>`
+5. Update tabel di atas
+6. Commit & push

@@ -23,10 +23,39 @@
     <main>
         <p class="pengantar">Pilih pertemuan di bawah ini. Pertemuan yang tersedia akan ditandai dengan status hijau</p>
 
+        <!-- Toolbar: Quick Jump (filter pertemuan 1-16) + Live Search -->
+        <div class="toolbar">
+            <div class="blok-jump">
+                <span class="toolbar-label">Pilih Pertemuan</span>
+                <nav class="tombol-jump" aria-label="Filter pertemuan">
+                    <button type="button" class="tombol-angka" data-target="pertemuan-1">1</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-2">2</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-3">3</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-4">4</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-5">5</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-6">6</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-7">7</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-8">8</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-9">9</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-10">10</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-11">11</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-12">12</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-13">13</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-14">14</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-15">15</button>
+                    <button type="button" class="tombol-angka" data-target="pertemuan-16">16</button>
+                </nav>
+            </div>
+            <div class="blok-cari">
+                <label class="toolbar-label" for="cari-pertemuan">Cari</label>
+                <input type="search" id="cari-pertemuan" placeholder="Cari topik / nomor..." autocomplete="off">
+            </div>
+        </div>
+
         <div class="grid-pertemuan">
 
             <!-- Pertemuan 1 -->
-            <div class="kartu tersedia" id="pertemuan-1">
+            <div class="kartu tersedia" id="pertemuan-1" data-title="pengenalan html struktur dasar elemen atribut">
                 <span class="status buka">Tersedia</span>
                 <p class="kartu-link">Pertemuan 1</p>
                 <span class="topik-singkat">Pengenalan HTML</span>
@@ -34,7 +63,7 @@
             </div>
 
             <!-- Pertemuan 2 -->
-            <div class="kartu tersedia" id="pertemuan-2">
+            <div class="kartu tersedia" id="pertemuan-2" data-title="html lanjutan list nested list gambar">
                 <span class="status buka">Tersedia</span>
                 <p class="kartu-link">Pertemuan 2</p>
                 <span class="topik-singkat">HTML Lanjutan</span>
@@ -42,7 +71,7 @@
             </div>
 
             <!-- Pertemuan 3 -->
-            <div class="kartu tersedia" id="pertemuan-3">
+            <div class="kartu tersedia" id="pertemuan-3" data-title="tabel form input validasi">
                 <span class="status buka">Tersedia</span>
                 <p class="kartu-link">Pertemuan 3</p>
                 <span class="topik-singkat">Tabel &amp; Form</span>
@@ -50,151 +79,162 @@
             </div>
 
             <!-- Pertemuan 4 -->
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-4" data-title="segera hadir pertemuan 4">
                 <span class="status tutup">-</span>
                 <span class="kartu-link">Pertemuan 4</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
             <!-- Pertemuan 5 -->
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-5" data-title="segera hadir pertemuan 5">
                 <span class="status tutup">-</span>
                 <span class="kartu-link">Pertemuan 5</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <!-- Pertemuan 6 + Detail Tugas -->
-            <div class="kartu tersedia kartu-detail" id="pertemuan-6">
+            <!-- Pertemuan 6 + Detail Tugas (accordion <details>/<summary>) -->
+            <div class="kartu tersedia kartu-detail" id="pertemuan-6" data-title="css dasar sintaks selector box model flexbox css grid responsif latihan kasus profil navbar galeri landing">
                 <span class="status buka">Tersedia</span>
                 <p class="kartu-link">Pertemuan 6 — CSS Dasar</p>
                 <span class="topik-singkat">Sintaks dasar, selector, box model, flexbox, CSS grid, responsif</span>
                 <a class="chip klik" href="./pertemuan6/pertemuan6.html">Klik Disini</a>
 
-                <div class="blok-tugas">
-                    <h3><span class="nomor">01</span> Latihan Dasar</h3>
+                <details class="akordeon-tugas">
+                    <summary><span>Lihat Daftar Latihan (10 Modul)</span></summary>
 
-                    <div class="baris-topik">
-                        <span class="nama-topik">Topik 1 — Sintaks Dasar</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-1-sintaks-dasar.html">Klik Disini</a>
+                    <div class="isi-akordeon">
+                        <div class="grup-akordeon">
+                            <h3><span class="nomor">01</span> Latihan Dasar</h3>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Topik 1 — Sintaks Dasar</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-1-sintaks-dasar.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Topik 2 — Selector &amp; Warna</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-2-selector-warna.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Topik 3 — Box Model</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-3-box-model.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Topik 4 — Flexbox</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-4-flexbox.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Topik 5 — CSS Grid</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-5-css-grid.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Topik 6 — Responsif</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-6-responsif.html">Klik Disini</a>
+                            </div>
+                        </div>
+
+                        <div class="grup-akordeon">
+                            <h3><span class="nomor">02</span> Latihan Dasar — Studi Kasus</h3>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Kasus 1 — Profil</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-1-profil.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Kasus 2 — Navbar</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-2-navbar.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Kasus 3 — Galeri</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-3-galeri.html">Klik Disini</a>
+                            </div>
+
+                            <div class="baris-topik">
+                                <span class="nama-topik">Kasus 4 — Landing</span>
+                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-4-landing.html">Klik Disini</a>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Topik 2 — Selector &amp; Warna</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-2-selector-warna.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Topik 3 — Box Model</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-3-box-model.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Topik 4 — Flexbox</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-4-flexbox.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Topik 5 — CSS Grid</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-5-css-grid.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Topik 6 — Responsif</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-6-responsif.html">Klik Disini</a>
-                    </div>
-                </div>
-
-                <div class="blok-tugas">
-                    <h3><span class="nomor">02</span> Latihan Dasar — Studi Kasus</h3>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Kasus 1 — Profil</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-1-profil.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Kasus 2 — Navbar</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-2-navbar.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Kasus 3 — Galeri</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-3-galeri.html">Klik Disini</a>
-                    </div>
-
-                    <div class="baris-topik">
-                        <span class="nama-topik">Kasus 4 — Landing</span>
-                        <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-4-landing.html">Klik Disini</a>
-                    </div>
-                </div>
+                </details>
             </div>
 
-            <!-- Pertemuan 7 - 16 -->
-            <div class="kartu soon">
+            <!-- Pertemuan 7 - 16 : Segera Hadir -->
+            <div class="kartu soon" id="pertemuan-7" data-title="segera hadir pertemuan 7">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 7</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-8" data-title="segera hadir pertemuan 8">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 8</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-9" data-title="segera hadir pertemuan 9">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 9</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-10" data-title="segera hadir pertemuan 10">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 10</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-11" data-title="segera hadir pertemuan 11">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 11</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-12" data-title="segera hadir pertemuan 12">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 12</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-13" data-title="segera hadir pertemuan 13">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 13</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-14" data-title="segera hadir pertemuan 14">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 14</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-15" data-title="segera hadir pertemuan 15">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 15</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
-            <div class="kartu soon">
+            <div class="kartu soon" id="pertemuan-16" data-title="segera hadir pertemuan 16">
                 <span class="status tutup">Segera Hadir</span>
                 <span class="kartu-link">Pertemuan 16</span>
                 <span class="topik-singkat">Materi belum tersedia</span>
             </div>
 
         </div>
+
+        <p class="pesan-cari" id="pesan-cari" hidden>Tidak ada pertemuan yang cocok. Coba kata kunci lain.</p>
     </main>
 
     <footer>
         Praktikum Pemrograman Web — D3 Sistem Informasi Akuntansi <br>· Politeknik Negeri Banjarmasin
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

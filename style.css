@@ -176,7 +176,7 @@ main {
     color: var(--teks-redup);
 }
 
-/* ============ DETAIL TUGAS PERTEMUAN 6 ============ */
+/* ============ DETAIL TUGAS (kartu lebar + accordion) ============ */
 /* Elevated card RawBlock: border 5px = lebih penting */
 .kartu-detail {
     grid-column: 1 / -1; /* Makan lebar penuh */
@@ -187,24 +187,71 @@ main {
     outline: none;
 }
 
-/* Divider list RawBlock: border hitam 3px */
-.blok-tugas {
+/* Anchor offset: kartu tidak ketutup header saat Quick Jump scroll */
+.kartu { scroll-margin-top: var(--sp-4); }
+
+/* Kartu yang difilter live search disembunyikan dari grid */
+.kartu[hidden] { display: none; }
+
+/* Accordion <details>: gaya neobrutalism — mono, uppercase, ▼ berputar */
+.akordeon-tugas {
     margin-top: var(--sp-3);
-    padding-top: var(--sp-3);
     border-top: var(--border-tebal) solid var(--hitam);
 }
 
-/* Label RawBlock: Archivo Black 14px uppercase */
-.blok-tugas h3 {
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+.akordeon-tugas summary {
+    display: flex;
+    justify-content: space-between; /* label kiri, panah kanan */
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-3) 0;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.akordeon-tugas summary::-webkit-details-marker { display: none; }
+
+/* Panah ▼ berputar 180° saat terbuka (al group-open:rotate-180) */
+.akordeon-tugas summary::after {
+    content: "▼";
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.akordeon-tugas[open] summary::after { transform: rotate(180deg); }
+
+/* Isi accordion: dashed border atas, mono kecil ala contoh */
+.isi-akordeon {
+    margin-top: var(--sp-1);
+    padding-top: var(--sp-3);
+    border-top: 1px dashed var(--hitam);
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+}
+
+.isi-akordeon .nama-topik {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+}
+
+/* Grup latihan di dalam isi accordion */
+.grup-akordeon + .grup-akordeon { margin-top: var(--sp-4); }
+
+.grup-akordeon h3 {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: var(--sp-2);
 }
 
-.blok-tugas h3 .nomor {
+.grup-akordeon h3 .nomor {
     background-color: var(--hitam);
     color: var(--putih);
     padding: 2px 8px;
@@ -230,6 +277,7 @@ main {
 
 /* Filter chip RawBlock: putih fill, hitam text, border 2px, square, uppercase 10px tracking 1px */
 .chip {
+    font-family: "Work Sans", sans-serif; /* Jangan mewarisi mono dari .isi-akordeon */
     align-self: flex-start; /* Jangan stretch selebar kartu (flex column) */
     background-color: var(--putih);
     border: 2px solid var(--hitam);
@@ -258,6 +306,99 @@ main {
     background: var(--oren); color: var(--putih); border-color: var(--oren);
 }
 
+/* ============ TOOLBAR: QUICK JUMP + LIVE SEARCH ============ */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-4);
+}
+
+.toolbar-label {
+    display: block;
+    margin-bottom: var(--sp-1);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tombol-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+}
+
+/* Tombol angka Quick Jump: kotak, border 2px, hover inversion */
+.tombol-angka {
+    width: 40px;
+    height: 40px;
+    background-color: var(--putih);
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    font-family: "Space Mono", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--hitam);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+/* Hitam = tombol yang SEDANG difilter; jangan pakai :hover inversion di sini,
+   karena hover hitam meniru state aktif (bug: klik clear tapi warna terlihat tetap hitam) */
+.tombol-angka.aktif {
+    background-color: var(--hitam);
+    color: var(--putih);
+}
+
+/* Penanda tersedia: titik hijau di sudut kanan atas (auto dari class .kartu via script.js) */
+.tombol-angka.ada {
+    position: relative;
+}
+
+.tombol-angka.ada::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--sukses);
+}
+
+.tombol-angka:focus-visible {
+    outline: var(--border-tebal) solid var(--hitam);
+    outline-offset: 2px;
+}
+
+/* Input live search: kotak, border 3px, radius 0 */
+#cari-pertemuan {
+    display: block;
+    width: min(320px, 100%);
+    padding: 10px var(--sp-3);
+    background-color: var(--putih);
+    border: var(--border-tebal) solid var(--hitam);
+    border-radius: 0;
+    font-family: "Space Mono", monospace;
+    font-size: 14px;
+    color: var(--hitam);
+}
+
+#cari-pertemuan::placeholder { color: var(--teks-redup); }
+
+#cari-pertemuan:focus-visible {
+    outline: var(--border-tebal) solid var(--hitam);
+    outline-offset: 2px;
+}
+
+.pesan-cari {
+    margin-top: var(--sp-2);
+    font-size: 14px;
+    color: var(--teks-redup);
+}
+
 /* ============ FOOTER ============ */
 footer {
     text-align: center;
@@ -281,6 +422,13 @@ footer {
     .grid-pertemuan {
         grid-template-columns: 1fr; /* Tumpuk jadi 1 kolom */
     }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #cari-pertemuan { width: 100%; }
 
     .baris-topik { flex-direction: column; align-items: flex-start; }
 }
