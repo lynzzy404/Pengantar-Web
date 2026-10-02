@@ -33,12 +33,7 @@
             kartu.hidden = !cocok;
             if (cocok) adaHasil = true;
 
-            // Kecocokan ada di dalam <details>? Buka accordion-nya
-            kartu.querySelectorAll('details').forEach(function (d) {
-                if (cocok && q !== '' && d.textContent.toLowerCase().indexOf(q) !== -1) {
-                    d.open = true;
-                }
-            });
+            // Accordion TIDAK auto-open: biarkan user membuka manual
         });
 
         // Sinkronkan tombol: aktif = nomor yang sedang difilter
