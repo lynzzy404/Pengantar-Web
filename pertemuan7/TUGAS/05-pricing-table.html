@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>05 - Pricing Table - Sebelum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .plan {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .plan.popular {
+            transform: scale(1.05);
+            border-color: #3498db;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+            z-index: 1;
+        }
+
+        .plan h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .plan h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .plan li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+
+        .plan li:last-child {
+            border-bottom: none;
+        }
+
+        .plan button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .plan:not(.popular) button {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .plan:not(.popular) button:hover {
+            background-color: #2980b9;
+        }
+
+        .plan.popular button {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .plan.popular button:hover {
+            background-color: #1a252f;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    INSTRUKSI PENGERJAAN:
+    1. Gunakan CSS Grid atau Flexbox pada ".pricing-container" untuk menyejajarkan 3 paket secara horizontal.
+    2. Berikan gaya dasar pada setiap kartu ".plan" (border, padding, border-radius, background putih, text-align center).
+    3. Khusus untuk paket tengah (berikan class .popular), ubah ukuran agar sedikit lebih menonjol (transform: scale(1.05) atau padding lebih besar).
+    4. Ubah warna border/header pada paket popular untuk membedakannya.
+    5. Hilangkan bullet pada daftar fitur (ul) dan berikan jarak.
+    -->
+    <div class="pricing-container">
+        <div class="plan">
+            <h3>Basic</h3>
+            <h2>Gratis</h2>
+            <ul>
+                <li>1 Pengguna</li>
+                <li>Penyimpanan 1GB</li>
+                <li>Dukungan Komunitas</li>
+            </ul>
+            <button>Pilih Basic</button>
+        </div>
+        <div class="plan popular">
+            <h3>Pro (Populer)</h3>
+            <h2>Rp 100.000/bln</h2>
+            <ul>
+                <li>5 Pengguna</li>
+                <li>Penyimpanan 50GB</li>
+                <li>Dukungan Prioritas</li>
+            </ul>
+            <button>Pilih Pro</button>
+        </div>
+        <div class="plan">
+            <h3>Enterprise</h3>
+            <h2>Hubungi Kami</h2>
+            <ul>
+                <li>Pengguna Tak Terbatas</li>
+                <li>Penyimpanan Unlimited</li>
+                <li>Dukungan 24/7</li>
+            </ul>
+            <button>Pilih Enterprise</button>
+        </div>
+    </div>
+</body>
+</html>

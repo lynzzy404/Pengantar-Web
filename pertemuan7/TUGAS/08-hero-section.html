@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>08 - Hero Section - Sebelum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+            url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        header p {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!--
+    INSTRUKSI PENGERJAAN:
+    1. Pada elemen <header>, atur height: 100vh agar memenuhi tinggi layar.
+    2. Tambahkan background-image pada <header>. Agar gambar tidak belang, gunakan background-size: cover dan background-position: center.
+    3. Agar teks mudah dibaca di atas gambar, tambahkan overlay linear-gradient pada property background-image (misal rgba hitam ke rgba hitam transparan).
+    4. Gunakan Flexbox pada <header> (display: flex, flex-direction: column, justify-content: center, align-items: center) agar konten tepat di tengah.
+    5. Ubah warna teks menjadi putih dan styling tombol (padding, background, border-radius).
+    -->
+    <header>
+        <div class="hero-content">
+            <h1>Bangun Masa Depan Digital Anda</h1>
+            <p>Kami membantu startup dan perusahaan bertransformasi menjadi lebih modern dengan teknologi web terbaru.</p>
+            <a href="#" class="btn">Mulai Proyek</a>
+        </div>
+    </header>
+</body>
+</html>
