@@ -268,7 +268,7 @@ main {
     border-bottom: var(--border-tebal) solid var(--hitam);
 }
 
-.baris-topik:last-child { border-bottom: none; }
+.isi-akordeon .baris-topik:last-child { border-bottom: none; }
 
 .nama-topik {
     flex: 1 1;
