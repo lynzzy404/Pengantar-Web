@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../../../../kembali.css">
 </head>
 <body>
-    <a class="kembali klik" href="../../../../index.html">Kembali</a>
+    <a class="kembali klik" href="../../../../index.html" onclick="if (history.length > 1) { history.back(); return false; }">Kembali</a>
     <h1 id="judul-utama">Belajar CSS Selectors</h1>
     <button class="tombol">Klik Saya</button>
 </body>

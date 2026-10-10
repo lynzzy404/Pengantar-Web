@@ -1,28 +1,50 @@
-/* Chip "Kembali" — RawBlock, sama dengan .chip di index.html */
-/* Akses: pertemuanN -> ../kembali.css | pertemuan6/TUGAS/... -> ../../../kembali.css */
+/* Tombol "Kembali" — pill sticky di kiri-atas: menempel di layar
+   saat scroll, tapi tetap bagian alur konten sehingga tidak menimpa
+   judul di posisi awal. Dipakai semua halaman pertemuanN dan TUGAS/latihan. */
 .kembali {
-    align-self: flex-start; /* Jangan stretch (flex column) */
-    background-color: white !important;
-    border: 2px solid black !important;
-    border-radius: 0 !important;
-    color: black !important;
-    padding: 4px 12px !important;
-    font-family: "Work Sans", sans-serif !important;
-    font-size: 10px !important;
+    position: sticky;
+    top: 8px;
+    z-index: 100;
+    align-self: flex-start; /* body flex-center di beberapa halaman latihan */
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    margin: 12px 16px;
+    padding: 8px 14px !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #1E40AF !important;
+    border-radius: 9999px !important;
+    color: #1E40AF !important;
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.15s ease !important;
+    letter-spacing: 0.01em !important;
+    text-transform: none !important;
     text-decoration: none !important;
-    display: inline-block !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
+
+.kembali::before {
+    content: "\2190"; /* panah kiri */
+    font-size: 14px;
+}
+
+.kembali:hover,
+.kembali:focus-visible {
+    background-color: #1E40AF !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+/* Kompatibilitas dengan kelas lama */
 .kembali.klik {
-    border-color: #008000 !important;
-    color: #008000 !important;
+    border-color: #1E40AF !important;
+    color: #1E40AF !important;
 }
+
 .kembali.klik:hover {
-    background: #008000 !important;
-    color: white !important;
-    border-color: #008000 !important;
-    text-decoration: none !important;
+    background: #1E40AF !important;
+    color: #FFFFFF !important;
+    border-color: #1E40AF !important;
 }

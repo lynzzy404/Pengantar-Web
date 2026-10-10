@@ -45,22 +45,24 @@
     </style>
 </head>
 <body>
-    <!--
+<link rel="stylesheet" href="../../kembali.css">
+<!--
     INSTRUKSI PENGERJAAN:
     1. Beri background warna gelap pada <nav>, set padding, dan jadikan Flexbox dengan justify-content: space-between agar logo dan menu terpisah di kiri-kanan.
-    2. Hilangkan bullet point (list-style: none) pada <ul> dan jadikan Flexbox agar item menu berjejer horizontal. Beri jarak antar elemen (gap).
-    3. Pada logo (.logo), ubah warnanya jadi putih, besarkan font, dan hilangkan garis bawah.
-    4. Pada link menu <a>, hilangkan garis bawah, beri warna teks putih cerah, dan padding.
-    5. Tambahkan efek hover pada link menu (misal warnanya berubah atau muncul garis bawah buatan).
-    -->
-    <nav>
-        <a href="#" class="logo">MyWebsite</a>
-        <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Layanan</a></li>
-            <li><a href="#">Tentang</a></li>
-            <li><a href="#">Kontak</a></li>
-        </ul>
-    </nav>
+        2. Hilangkan bullet point (list-style: none) pada <ul> dan jadikan Flexbox agar item menu berjejer horizontal. Beri jarak antar elemen (gap).
+            3. Pada logo (.logo), ubah warnanya jadi putih, besarkan font, dan hilangkan garis bawah.
+            4. Pada link menu <a>, hilangkan garis bawah, beri warna teks putih cerah, dan padding.
+                5. Tambahkan efek hover pada link menu (misal warnanya berubah atau muncul garis bawah buatan).
+                -->
+                <nav>
+                    <a href="#" class="logo">MyWebsite</a>
+                    <ul>
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#">Layanan</a></li>
+                        <li><a href="#">Tentang</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </nav>
+                <a href="../../index.html" class="kembali klik" onclick="if (history.length > 1) { history.back(); return false; }">Kembali</a>
 </body>
 </html>
