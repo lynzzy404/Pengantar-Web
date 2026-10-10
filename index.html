@@ -4,30 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Pertemuan — Praktikum Pemrograman Web</title>
-    <!-- RawBlock Design System (designmd.ai/chef/rawblock): brutalism, hitam-putih, border tebal, radius 0 -->
+    <!-- Nusantara Edu Portal (DESIGN.md): mobile-first, kartu putih di atas canvas #F8FAFC, hairline border, radius 16px -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="judul">
-            <h1>Praktikum Pemrograman Web</h1>
-            <p>Daftar Pertemuan & Bahan Latihan </p>
+
+    <!-- ============ TOP APP BAR (PRD 4.4) ============ -->
+    <div class="app-bar">
+        <div class="brand">
+            <span class="brand-ikon" aria-hidden="true">DP</span>
+            <span class="brand-teks">Daftar Pertemuan</span>
         </div>
-        <div class="badge-mata-kuliah">Semester 3</div>
-    </header>
+        <div class="app-aksi">
+            <span class="titik-notif" aria-hidden="true"></span>
+            <span class="avatar" aria-hidden="true">Hai !</span>
+        </div>
+    </div>
 
     <main>
-        <p class="pengantar">Pilih pertemuan di bawah ini. Pertemuan yang tersedia akan ditandai dengan status hijau</p>
 
-        <!-- Toolbar: Quick Jump (filter pertemuan 1-16) + Live Search -->
+        <!-- ============ KARTU MATA KULIAH + PROGRES (PRD 4.1) ============ -->
+        <section class="hero" aria-labelledby="nama-mk">
+            <p class="hero-meta">D3 Sistem Informasi Akuntansi · Semester 3</p>
+            <h1 id="nama-mk">Praktikum Pemrograman Web</h1>
+            <p class="hero-kampus">Politeknik Negeri Banjarmasin</p>
+
+            <div class="progres">
+                <div class="progres-teks">
+                    <span class="progres-kiri">Pertemuan Aktif: Minggu 7 dari 16</span>
+                    <span class="progres-kanan">31% Tersedia</span>
+                </div>
+                <div class="progres-bar" role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100" aria-label="Progres materi tersedia">
+                    <span class="progres-isi" style="width: 31%"></span>
+                </div>
+                <p class="progres-detail">5 dari 16 pertemuan sudah tersedia</p>
+            </div>
+
+            <a class="cta-utama" href="#pertemuan-7">Lanjut: Pertemuan 7 <span aria-hidden="true">→</span></a>
+        </section>
+
+        <!-- ============ SEGMENTED FILTER + QUICK JUMP (PRD 4.2) ============ -->
         <div class="toolbar">
+            <div class="segmen" role="group" aria-label="Filter fase pertemuan">
+                <button type="button" class="seg-btn aktif" data-fase="semua">Semua (16)</button>
+                <button type="button" class="seg-btn" data-fase="pra-uts">Pra-UTS 1–8</button>
+                <button type="button" class="seg-btn" data-fase="pra-uas">Pra-UAS 9–16</button>
+            </div>
             <div class="blok-jump">
                 <span class="toolbar-label">Pilih Pertemuan</span>
-                <nav class="tombol-jump" aria-label="Filter pertemuan">
+                <nav class="tombol-jump" aria-label="Quick jump pertemuan">
                     <button type="button" class="tombol-angka" data-target="pertemuan-1">1</button>
                     <button type="button" class="tombol-angka" data-target="pertemuan-2">2</button>
                     <button type="button" class="tombol-angka" data-target="pertemuan-3">3</button>
@@ -46,290 +74,345 @@
                     <button type="button" class="tombol-angka" data-target="pertemuan-16">16</button>
                 </nav>
             </div>
-            <div class="blok-cari">
-                <label class="toolbar-label" for="cari-pertemuan">Cari</label>
-                <input type="search" id="cari-pertemuan" placeholder="Cari topik / nomor..." autocomplete="off">
-            </div>
         </div>
 
-        <div class="grid-pertemuan">
-
-            <!-- Pertemuan 1 -->
-            <div class="kartu tersedia" id="pertemuan-1" data-title="pengenalan html struktur dasar elemen atribut">
-                <span class="status buka">Tersedia</span>
-                <p class="kartu-link">Pertemuan 1</p>
-                <span class="topik-singkat">Pengenalan HTML</span>
-                <a class="chip klik" href="./pertemuan1/pertemuan1.html">Klik Disini</a>
+        <!-- ============ FASE PRA-UTS (PRD 4.3.1) ============ -->
+        <section class="grup-fase" data-fase="pra-uts" aria-labelledby="fase-uts">
+            <div class="sub-header">
+                <h2 id="fase-uts">Pertemuan 1–8 <span class="sub-label">(Pra-UTS)</span></h2>
+                <span class="badge-fase">5 Tersedia</span>
             </div>
 
-            <!-- Pertemuan 2 -->
-            <div class="kartu tersedia" id="pertemuan-2" data-title="html lanjutan list nested list gambar">
-                <span class="status buka">Tersedia</span>
-                <p class="kartu-link">Pertemuan 2</p>
-                <span class="topik-singkat">HTML Lanjutan</span>
-                <a class="chip klik" href="./pertemuan2/pertemuan2.html">Klik Disini</a>
-            </div>
+            <div class="grid-pertemuan">
 
-            <!-- Pertemuan 3 -->
-            <div class="kartu tersedia" id="pertemuan-3" data-title="tabel form input validasi">
-                <span class="status buka">Tersedia</span>
-                <p class="kartu-link">Pertemuan 3</p>
-                <span class="topik-singkat">Tabel &amp; Form</span>
-                <a class="chip klik" href="./pertemuan3/pertemuan3.html">Klik Disini</a>
-            </div>
-
-            <!-- Pertemuan 4 -->
-            <div class="kartu soon" id="pertemuan-4" data-title="segera hadir pertemuan 4">
-                <span class="status tutup">-</span>
-                <span class="kartu-link">Pertemuan 4</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <!-- Pertemuan 5 -->
-            <div class="kartu soon" id="pertemuan-5" data-title="segera hadir pertemuan 5">
-                <span class="status tutup">-</span>
-                <span class="kartu-link">Pertemuan 5</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <!-- Pertemuan 6 + Detail Tugas (accordion <details>/<summary>) -->
-            <div class="kartu tersedia kartu-detail" id="pertemuan-6" data-title="css dasar sintaks selector box model flexbox css grid responsif latihan kasus profil navbar galeri landing">
-                <span class="status buka">Tersedia</span>
-                <p class="kartu-link">Pertemuan 6 — CSS Dasar</p>
-                <span class="topik-singkat">Sintaks dasar, selector, box model, flexbox, CSS grid, responsif</span>
-                <a class="chip klik" href="./pertemuan6/pertemuan6.html">Klik Disini</a>
-
-                <details class="akordeon-tugas">
-                    <summary><span>Lihat Daftar Latihan (10 Modul)</span></summary>
-
-                    <div class="isi-akordeon">
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">01</span> Latihan Dasar</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Topik 1 — Sintaks Dasar</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-1-sintaks-dasar.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Topik 2 — Selector &amp; Warna</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-2-selector-warna.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Topik 3 — Box Model</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-3-box-model.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Topik 4 — Flexbox</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-4-flexbox.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Topik 5 — CSS Grid</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-5-css-grid.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Topik 6 — Responsif</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-6-responsif.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">02</span> Latihan Dasar — Studi Kasus</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Kasus 1 — Profil</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-1-profil.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Kasus 2 — Navbar</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-2-navbar.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Kasus 3 — Galeri</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-3-galeri.html">Klik Disini</a>
-                            </div>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Kasus 4 — Landing</span>
-                                <a class="chip klik" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-4-landing.html">Klik Disini</a>
-                            </div>
-                        </div>
+                <!-- Pertemuan 1 -->
+                <article class="kartu tersedia" id="pertemuan-1" data-title="pengenalan html struktur dasar elemen atribut">
+                    <div class="kartu-atas">
+                        <span class="nomor">01</span>
+                        <span class="status buka">Tersedia</span>
                     </div>
-                </details>
-            </div>
+                    <h3 class="kartu-judul">Pengenalan HTML</h3>
+                    <p class="topik-singkat">Struktur dasar, elemen, atribut</p>
+                    <a class="kartu-cta" href="./pertemuan1/pertemuan1.html">Buka Materi <span aria-hidden="true">→</span></a>
+                </article>
 
-            <!-- Pertemuan 7 — CSS Lanjutan: Komponen UI -->
-            <div class="kartu tersedia kartu-detail" id="pertemuan-7" data-title="css lanjutan komponen ui kartu profil form login navbar produk pricing footer artikel hero testimoni galeri">
-                <span class="status buka">Tersedia</span>
-                <p class="kartu-link">Pertemuan 7 — CSS Lanjutan: Komponen UI</p>
-                <span class="topik-singkat">10 Komponen: Profil, Login, Navbar, Produk, Pricing, Footer, Artikel, Hero, Testimoni, Galeri</span>
-                
-                <details class="akordeon-tugas">
-                    <summary><span>Lihat Daftar Latihan (10 Modul)</span></summary>
-
-                    <div class="isi-akordeon">
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">01</span> Kartu Profil</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Profil Card — Flexbox, Border-radius, Shadow, Hover</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/01-kartu-profil.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">02</span> Form Login</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Login Form — Centering, Input Focus, Button Hover</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/02-form-login.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">03</span> Navbar</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Navigation Bar — Flexbox, Hover Effects</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/03-navbar.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">04</span> Kartu Produk</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Product Card — Overflow Hidden, Price Styling</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/04-kartu-produk.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">05</span> Pricing Table</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Pricing Cards — CSS Grid, Popular Highlight</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/05-pricing-table.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">06</span> Footer</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Footer — CSS Grid 4 Kolom, Link Styling</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/06-footer.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">07</span> Artikel Blog</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Blog Article — Drop Cap, Blockquote Styling</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/07-artikel-blog.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">08</span> Hero Section</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Hero — 100vh, Background Overlay, Flexbox Center</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/08-hero-section.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">09</span> Testimoni</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Testimonials — CSS Grid, ::before Quote Watermark</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/09-testimoni.html">Klik Disini</a>
-                            </div>
-                        </div>
-
-                        <div class="grup-akordeon">
-                            <h3><span class="nomor">10</span> Galeri Gambar</h3>
-
-                            <div class="baris-topik">
-                                <span class="nama-topik">Image Gallery — Auto-fill Grid, Grayscale Hover</span>
-                                <a class="chip klik" href="./pertemuan7/TUGAS/10-galeri-gambar.html">Klik Disini</a>
-                            </div>
-                        </div>
+                <!-- Pertemuan 2 -->
+                <article class="kartu tersedia" id="pertemuan-2" data-title="html lanjutan list nested list gambar">
+                    <div class="kartu-atas">
+                        <span class="nomor">02</span>
+                        <span class="status buka">Tersedia</span>
                     </div>
-                </details>
+                    <h3 class="kartu-judul">HTML Lanjutan</h3>
+                    <p class="topik-singkat">List, nested list, gambar</p>
+                    <a class="kartu-cta" href="./pertemuan2/pertemuan2.html">Buka Materi <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Pertemuan 3 -->
+                <article class="kartu tersedia" id="pertemuan-3" data-title="tabel form input validasi">
+                    <div class="kartu-atas">
+                        <span class="nomor">03</span>
+                        <span class="status buka">Tersedia</span>
+                    </div>
+                    <h3 class="kartu-judul">Tabel &amp; Form</h3>
+                    <p class="topik-singkat">Input, validasi form</p>
+                    <a class="kartu-cta" href="./pertemuan3/pertemuan3.html">Buka Materi <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Pertemuan 4 -->
+                <article class="kartu soon" id="pertemuan-4" data-title="segera hadir pertemuan 4">
+                    <div class="kartu-atas">
+                        <span class="nomor">04</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <!-- Pertemuan 5 -->
+                <article class="kartu soon" id="pertemuan-5" data-title="segera hadir pertemuan 5">
+                    <div class="kartu-atas">
+                        <span class="nomor">05</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <!-- Pertemuan 6 + Detail Latihan (accordion <details>/<summary>) -->
+                <article class="kartu tersedia kartu-detail" id="pertemuan-6" data-title="css dasar sintaks selector box model flexbox css grid responsif latihan kasus profil navbar galeri landing">
+                    <div class="kartu-atas">
+                        <span class="nomor">06</span>
+                        <span class="status buka">Tersedia</span>
+                    </div>
+                    <h3 class="kartu-judul">Pertemuan 6 — CSS Dasar</h3>
+                    <p class="topik-singkat">Sintaks dasar, selector, box model, flexbox, CSS grid, responsif</p>
+                    <a class="kartu-cta" href="./pertemuan6/pertemuan6.html">Buka Materi <span aria-hidden="true">→</span></a>
+
+                    <details class="akordeon-tugas">
+                        <summary><span>Lihat Daftar Latihan (10 Modul)</span></summary>
+
+                        <div class="isi-akordeon">
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">01</span> Latihan Dasar</h4>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Topik 1 — Sintaks Dasar</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-1-sintaks-dasar.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Topik 2 — Selector &amp; Warna</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-2-selector-warna.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Topik 3 — Box Model</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-3-box-model.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Topik 4 — Flexbox</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-4-flexbox.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Topik 5 — CSS Grid</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-5-css-grid.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Topik 6 — Responsif</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/01_Latihan_Dasar/sebelum/topik-6-responsif.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">02</span> Studi Kasus</h4>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Kasus 1 — Profil</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-1-profil.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Kasus 2 — Navbar</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-2-navbar.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Kasus 3 — Galeri</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-3-galeri.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Kasus 4 — Landing</span>
+                                    <a class="chip" href="./pertemuan6/TUGAS/02_Latihan_Dasar/sebelum/kasus-4-landing.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </article>
+
+                <!-- Pertemuan 7 — sesi aktif (highlight "Minggu Ini") + Detail Latihan -->
+                <article class="kartu tersedia kartu-detail kartu-aktif" id="pertemuan-7" data-title="css lanjutan komponen ui kartu profil form login navbar produk pricing footer artikel hero testimoni galeri">
+                    <div class="kartu-atas">
+                        <span class="nomor">07</span>
+                        <span class="status jalan">Minggu Ini</span>
+                    </div>
+                    <h3 class="kartu-judul">Pertemuan 7 — CSS Lanjutan: Komponen UI</h3>
+                    <p class="topik-singkat">10 komponen: Profil, Login, Navbar, Produk, Pricing, Footer, Artikel, Hero, Testimoni, Galeri</p>
+                    <a class="kartu-cta utama" href="./pertemuan7/pertemuan7.html">Buka <span aria-hidden="true">→</span></a>
+
+                    <details class="akordeon-tugas">
+                        <summary><span>Lihat Daftar Latihan (10 Modul)</span></summary>
+
+                        <div class="isi-akordeon">
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">01</span> Kartu Profil</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Profil Card — Flexbox, Border-radius, Shadow, Hover</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/01-kartu-profil.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">02</span> Form Login</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Login Form — Centering, Input Focus, Button Hover</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/02-form-login.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">03</span> Navbar</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Navigation Bar — Flexbox, Hover Effects</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/03-navbar.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">04</span> Kartu Produk</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Product Card — Overflow Hidden, Price Styling</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/04-kartu-produk.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">05</span> Pricing Table</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Pricing Cards — CSS Grid, Popular Highlight</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/05-pricing-table.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">06</span> Footer</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Footer — CSS Grid 4 Kolom, Link Styling</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/06-footer.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">07</span> Artikel Blog</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Blog Article — Drop Cap, Blockquote Styling</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/07-artikel-blog.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">08</span> Hero Section</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Hero — 100vh, Background Overlay, Flexbox Center</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/08-hero-section.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">09</span> Testimoni</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Testimonials — CSS Grid, ::before Quote Watermark</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/09-testimoni.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+
+                            <div class="grup-akordeon">
+                                <h4><span class="nomor-grup">10</span> Galeri Gambar</h4>
+                                <div class="baris-topik">
+                                    <span class="nama-topik">Image Gallery — Auto-fill Grid, Grayscale Hover</span>
+                                    <a class="chip" href="./pertemuan7/TUGAS/10-galeri-gambar.html">Buka <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </article>
+
+                <!-- Pertemuan 8 — UTS (PRD 4.3) -->
+                <article class="kartu soon" id="pertemuan-8" data-title="segera hadir pertemuan 8 uts evaluasi tengah semester">
+                    <div class="kartu-atas">
+                        <span class="nomor">08</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Evaluasi Tengah Semester (UTS)</h3>
+                    <p class="topik-singkat">Segera Hadir</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ============ FASE PRA-UAS (PRD 4.3.2) ============ -->
+        <section class="grup-fase" data-fase="pra-uas" aria-labelledby="fase-uas">
+            <div class="sub-header">
+                <h2 id="fase-uas">Pertemuan 9–16 <span class="sub-label">(Pra-UAS)</span></h2>
+                <span class="badge-fase">0 Tersedia</span>
             </div>
 
-            <!-- Pertemuan 8 - 16 : Segera Hadir -->
+            <div class="grid-pertemuan">
 
-            <div class="kartu soon" id="pertemuan-8" data-title="segera hadir pertemuan 8">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 8</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
+                <article class="kartu soon" id="pertemuan-9" data-title="segera hadir pertemuan 9">
+                    <div class="kartu-atas">
+                        <span class="nomor">09</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <article class="kartu soon" id="pertemuan-10" data-title="segera hadir pertemuan 10">
+                    <div class="kartu-atas">
+                        <span class="nomor">10</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <article class="kartu soon" id="pertemuan-11" data-title="segera hadir pertemuan 11">
+                    <div class="kartu-atas">
+                        <span class="nomor">11</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <article class="kartu soon" id="pertemuan-12" data-title="segera hadir pertemuan 12">
+                    <div class="kartu-atas">
+                        <span class="nomor">12</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <article class="kartu soon" id="pertemuan-13" data-title="segera hadir pertemuan 13">
+                    <div class="kartu-atas">
+                        <span class="nomor">13</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <article class="kartu soon" id="pertemuan-14" data-title="segera hadir pertemuan 14">
+                    <div class="kartu-atas">
+                        <span class="nomor">14</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <article class="kartu soon" id="pertemuan-15" data-title="segera hadir pertemuan 15">
+                    <div class="kartu-atas">
+                        <span class="nomor">15</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Segera Hadir</h3>
+                    <p class="topik-singkat">Materi belum tersedia</p>
+                </article>
+
+                <!-- Pertemuan 16 — UAS (PRD 4.3) -->
+                <article class="kartu soon" id="pertemuan-16" data-title="segera hadir pertemuan 16 uas ujian akhir semester review">
+                    <div class="kartu-atas">
+                        <span class="nomor">16</span>
+                        <span class="status tutup">Terkunci</span>
+                    </div>
+                    <h3 class="kartu-judul">Review &amp; Ujian Akhir Semester (UAS)</h3>
+                    <p class="topik-singkat">Segera Hadir</p>
+                </article>
+
             </div>
+        </section>
 
-            <div class="kartu soon" id="pertemuan-9" data-title="segera hadir pertemuan 9">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 9</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-10" data-title="segera hadir pertemuan 10">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 10</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-11" data-title="segera hadir pertemuan 11">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 11</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-12" data-title="segera hadir pertemuan 12">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 12</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-13" data-title="segera hadir pertemuan 13">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 13</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-14" data-title="segera hadir pertemuan 14">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 14</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-15" data-title="segera hadir pertemuan 15">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 15</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-            <div class="kartu soon" id="pertemuan-16" data-title="segera hadir pertemuan 16">
-                <span class="status tutup">Segera Hadir</span>
-                <span class="kartu-link">Pertemuan 16</span>
-                <span class="topik-singkat">Materi belum tersedia</span>
-            </div>
-
-        </div>
-
-        <p class="pesan-cari" id="pesan-cari" hidden>Tidak ada pertemuan yang cocok. Coba kata kunci lain.</p>
     </main>
 
     <footer>
-        Praktikum Pemrograman Web — D3 Sistem Informasi Akuntansi <br>· Politeknik Negeri Banjarmasin
+        Praktikum Pemrograman Web — D3 Sistem Informasi Akuntansi<br>
+        Politeknik Negeri Banjarmasin
     </footer>
 
     <script src="script.js"></script>

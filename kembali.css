@@ -2,26 +2,27 @@
 /* Akses: pertemuanN -> ../kembali.css | pertemuan6/TUGAS/... -> ../../../kembali.css */
 .kembali {
     align-self: flex-start; /* Jangan stretch (flex column) */
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 0;
-    color: black;
-    padding: 4px 12px;
-    font-family: "Work Sans", sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.15s ease;
-    text-decoration: none;
+    background-color: white !important;
+    border: 2px solid black !important;
+    border-radius: 0 !important;
+    color: black !important;
+    padding: 4px 12px !important;
+    font-family: "Work Sans", sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.15s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
 }
 .kembali.klik {
-    border-color: #008000;
-    color: #008000;
+    border-color: #008000 !important;
+    color: #008000 !important;
 }
 .kembali.klik:hover {
-    background: #008000;
-    color: white;
-    border-color: #008000;
-    text-decoration: none;
+    background: #008000 !important;
+    color: white !important;
+    border-color: #008000 !important;
+    text-decoration: none !important;
 }
