@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Umum - PT Prima Akuntindo</title>
+    <link rel="stylesheet" href="./jurnal_umum.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Menu Utama</h3>
+            <nav>
+                <ul>
+                    <li><a href="/pertemuan8/UTS_D040325013_M.-Nur-Said/dashboard-page/dashboard.html">> Dashboard</a></li>
+                    <li><a href="/pertemuan8/UTS_D040325013_M.-Nur-Said/jurnal_umum-page/jurnal_umum.html">> Jurnal</a></li>
+                    <li><a href="#">> Buku Besar</a></li>
+                    <li><a href="/pertemuan8/UTS_D040325013_M.-Nur-Said/laba-rugi-page/laba-rugi.html">> Laba Rugi</a></li>
+                    <li><a href="#">> Neraca</a></li>
+                </ul>
+            </nav>
+            <a href="/pertemuan8/UTS_D040325013_M.-Nur-Said/login-page/login.html" class="logout">[Logout]</a>
+        </aside>
+
+        <main class="main-content">
+            <h1>Jurnal Umum</h1>
+            <div class="card-form">
+                <form>
+                    <div class="form-group">
+                        <label>Tanggal Transaksi</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>No. Bukti</label>
+                        <input type="text" placeholder="Masukkan nomor bukti">
+                    </div>
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <textarea rows="3" placeholder="Deskripsi transaksi"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Akun</label>
+                        <select>
+                            <option>Kas</option>
+                            <option>Piutang</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Posisi Saldo</label>
+                        <div class="radio-group">
+                            <input type="radio" name="saldo" value="debit"> Debit
+                            <input type="radio" name="saldo" value="kredit"> Kredit
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nominal (Rp)</label>
+                        <input type="number" placeholder="0">
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="btn-save">SIMPAN TRANSAKSI</button>
+                        <button type="button" class="btn-cancel">BATAL</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

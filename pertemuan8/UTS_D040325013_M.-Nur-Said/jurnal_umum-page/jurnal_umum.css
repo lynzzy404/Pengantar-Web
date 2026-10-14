@@ -1,0 +1,63 @@
+/* Global Style */
+* { box-sizing: border-box; font-family: sans-serif; }
+body { 
+    background: #f4f613; 
+    margin: 0; 
+}
+
+/* Sidebar & Layout */
+.dashboard-container { display: flex; min-height: 100vh; }
+.sidebar {
+    width: 250px;
+    background: #212513;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar h3 { 
+    font-size: 1.2rem; margin-bottom: 1.5rem; border-bottom: 1px solid #343a13; padding-bottom: 0.5rem; 
+}
+.sidebar nav ul { 
+    list-style: none; padding: 0; margin: 0; 
+}
+.sidebar nav ul li { 
+    padding: 0.8rem 0; border-bottom: 1px solid #343a13; 
+}
+.sidebar nav ul li a { 
+    color: white; text-decoration: none; 
+}
+.sidebar nav ul li a:hover { 
+    color: #0d6e13; 
+}
+.logout { 
+    margin-top: auto; color: #ff4d13; text-decoration: none; font-weight: bold; 
+}
+
+/* Jurnal Page Style */
+.main-content { 
+    flex: 1; padding: 2rem; 
+}
+.card-form { 
+    background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 600px; 
+}
+.form-group { 
+    margin-bottom: 1rem; 
+}
+label { 
+    display: block; margin-bottom: 0.3rem; font-weight: bold; 
+}
+input[type="text"], textarea, select { 
+    width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 4px; 
+}
+
+.radio-group { 
+    padding: 0.5rem 0; 
+}
+.btn-container { 
+    margin-top: 1.5rem; 
+}
+.btn-save { 
+    padding: 0.7rem 1.5rem; background: #28a713; color: white; border: none; border-radius: 4px; cursor: pointer; 
+}
+.btn-cancel { padding: 0.7rem 1.5rem; background: #dc3513; color: white; border: none; border-radius: 4px; cursor: pointer; }
