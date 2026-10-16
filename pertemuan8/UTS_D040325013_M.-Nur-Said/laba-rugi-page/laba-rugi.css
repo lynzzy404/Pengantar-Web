@@ -52,5 +52,12 @@ tr:nth-child(even) {
     text-align: right; 
 }
 .total-row { 
-    font-weight: bold; background: #e9ec13; 
+    font-weight: bold; 
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar { width: 100%; padding: 0.5rem; }
+  .dashboard-container { flex-direction: column; }
+  .main-content { padding: 1rem; }
+}
+ 
 }
