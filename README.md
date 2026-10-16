@@ -9,11 +9,11 @@
 | 1 | Pengenalan HTML | Struktur dasar HTML, elemen, atribut |
 | 2 | HTML Lanjutan | List, nested list, gambar |
 | 3 | Tabel & Form | Tabel, form, input, validasi |
-| 4 | - | - |
-| 5 | - | - |
+| 4 | JavaScript Dasar | Variabel, tipe data, kontrol alur |
+| 5 | DOM & Event | Manipulasi elemen, event handling |
 | 6 | CSS Dasar | Sintaks dasar, selector, box model, flexbox, CSS grid, responsif |
-| 7 | - | - |
-| 8 | - | - |
+| 7 | Interaktif Web | Quick Jump, Live Search, script.js |
+| 8 | UTS Persiapan | Dashboard, jurnal umum, laba rugi |
 | 9 | - | - |
 | 10 | - | - |
 | 11 | - | - |
@@ -37,24 +37,34 @@ Pengantar-Web/
 ├── template.md    (template kartu pertemuan baru)
 ├── pertemuan1/
 │   ├── pertemuan1.html
-│   └── tes.jpeg
+│   └── tes.webp
 ├── pertemuan2/
 │   ├── pertemuan2.html
-│   └── tes.jpeg
+│   └── tes2.webp
 ├── pertemuan3/
 │   ├── pertemuan3.html
-│   └── logo1.png
+│   ├── logo1.webp
+│   └── table.html
 ├── pertemuan6/
 │   ├── pertemuan6.html
 │   ├── style.css
 │   └── TUGAS/
 │       ├── 01_Latihan_Dasar/
-│       │   ├── sebelum/   (6 topik: sintaks dasar, selector, box model, flexbox, grid, responsif)
-│       │   └── sesudah/   (6 topik)
+│       │   ├── sebelum/
+│       │   └── sesudah/
 │       └── 02_Latihan_Dasar/
-│           ├── sebelum/   (4 kasus: profil, navbar, galeri, landing)
-│           └── sesudah/   (4 kasus)
-└── ...
+│           ├── sebelum/
+│           └── sesudah/
+├── pertemuan7/
+│   ├── pertemuan7.html
+│   └── TUGAS/
+└── pertemuan8/
+    ├── pertemuan8.html
+    └── UTS_D040325013_M.-Nur-Said/
+        ├── dashboard-page/
+        ├── jurnal_umum-page/
+        ├── laba-rugi-page/
+        └── login-page/
 ```
 
 ## Cara Menambah Pertemuan Baru
